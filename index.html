@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gidelim Gizlilik ve Destek</title>
+<meta name="description" content="Gidelim uygulamasının gizlilik politikası ve destek sayfası.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap">
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  /* Yerleşim: uygulamanın künyesi gibi tek sütunlu basılı bir sayfa; renkler Fildişi ve Gece baskılarından. */
+  :root {
+    --zemin: #EDE8DD;
+    --kart: #F6F2EA;
+    --murekkep: #17150F;
+    --ikincil: #5E5749;
+    --soluk: #6F685A;
+    --cizgi: #CFC6B4;
+    --vurgu: #8A6A2F;
+    --muhur: #1F1C16;
+    --muhur-halka: #4A4232;
+    --muhur-harf: #C2A36B;
+    --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: "Jost", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --zemin: #14120D; --kart: #1E1B15; --murekkep: #EDE8DD; --ikincil: #A39A88; --soluk: #8C8473;
+      --cizgi: #36312A; --vurgu: #C2A36B; --muhur: #8A6A2F; --muhur-halka: #B8975A; --muhur-harf: #2A2010;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --zemin: #14120D; --kart: #1E1B15; --murekkep: #EDE8DD; --ikincil: #A39A88; --soluk: #8C8473;
+    --cizgi: #36312A; --vurgu: #C2A36B; --muhur: #8A6A2F; --muhur-halka: #B8975A; --muhur-harf: #2A2010;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--zemin);
+    color: var(--murekkep);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sayfa {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 48px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  @media (min-width: 640px) {
+    .sayfa { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+  }
+
+  .etiket {
+    font-family: var(--sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ikincil);
+  }
+
+  /* Başlık */
+  .kunye { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  .muhur {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--muhur);
+    box-shadow: inset 0 0 0 5px var(--muhur), inset 0 0 0 6px var(--muhur-halka), 0 6px 14px rgba(0,0,0,0.18);
+    display: grid; place-items: center;
+    transform: rotate(-8deg);
+  }
+  .muhur span { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 32px; line-height: 1; color: var(--muhur-harf); transform: translateY(-1px); }
+  h1 { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(2.6rem, 9vw, 3.4rem); line-height: 1; letter-spacing: -0.01em; }
+  .cizgi-kisa { width: 120px; height: 1px; background: var(--vurgu); }
+  .tarih { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.125rem; color: var(--ikincil); }
+  .dil { display: flex; gap: 18px; justify-content: center; }
+  .dil a { color: var(--ikincil); text-decoration: none; padding: 6px 2px; border-bottom: 1px solid transparent; }
+  .dil a:hover, .dil a:focus-visible { color: var(--murekkep); border-bottom-color: var(--vurgu); outline: none; }
+
+  /* Özet kartı */
+  .kisaca {
+    background: var(--kart);
+    border: 1px solid var(--cizgi);
+    padding: 22px 22px 18px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .kisaca ul { margin: 0; }
+
+  /* Bölümler */
+  .metin { display: flex; flex-direction: column; gap: 36px; }
+  section { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  section + section { padding-top: 32px; border-top: 1px solid var(--cizgi); }
+  h2 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 1.6rem; line-height: 1.2; text-wrap: balance; }
+  p { margin: 0; max-width: 65ch; }
+  .ikincil { color: var(--ikincil); }
+
+  ul { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-direction: column; gap: 10px; }
+  li { position: relative; padding-left: 22px; max-width: 65ch; }
+  li::before {
+    content: ""; position: absolute; left: 3px; top: 0.62em;
+    width: 6px; height: 6px; background: var(--vurgu); transform: rotate(45deg);
+  }
+
+  a { color: var(--murekkep); text-decoration-color: var(--vurgu); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--vurgu); outline-offset: 2px; }
+  code, .kod { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.875em; color: var(--ikincil); overflow-wrap: anywhere; }
+  .yol { font-weight: 500; }
+
+  .iletisim {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+    padding: 16px 18px; border: 1px solid var(--cizgi); background: var(--kart);
+  }
+  .eposta { font-family: var(--serif); font-size: 1.35rem; font-style: italic; user-select: all; overflow-wrap: anywhere; }
+
+  .ayrac { display: flex; align-items: center; gap: 14px; justify-content: center; }
+  .ayrac::before, .ayrac::after { content: ""; width: 36px; height: 1px; background: var(--cizgi); }
+  .elmas { width: 7px; height: 7px; background: var(--vurgu); transform: rotate(45deg); }
+
+  footer { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+  footer .no { font-family: var(--serif); color: var(--vurgu); font-size: 1rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .muhur { animation: bas 0.7s cubic-bezier(0.3, 0.9, 0.3, 1.12) both; }
+    @keyframes bas { from { transform: rotate(-22deg) scale(1.35); opacity: 0; } to { transform: rotate(-8deg) scale(1); opacity: 1; } }
+  }
+</style>
+
+</head>
+<body>
+<main class="sayfa">
+  <header class="kunye">
+    <div class="muhur" aria-hidden="true"><span>G</span></div>
+    <h1>Gidelim</h1>
+    <div class="etiket">Gizlilik ve Destek</div>
+    <div class="cizgi-kisa" aria-hidden="true"></div>
+    <p class="tarih">Yürürlük tarihi: 19 Ekim 2026</p>
+    <nav class="dil etiket" aria-label="Dil">
+      <a href="#tr">Türkçe</a>
+      <a href="#en">English</a>
+    </nav>
+  </header>
+
+  <!-- TÜRKÇE -->
+  <article id="tr" class="metin" lang="tr">
+    <div class="kisaca">
+      <div class="etiket">Kısaca</div>
+      <ul>
+        <li>Gidelim'de hesap, reklam, analitik ve takip yok.</li>
+        <li>Kaydettiğin her şey yalnızca telefonunda durur. Bizim bir sunucumuz yok; verilerini göremeyiz.</li>
+        <li>Mekan aramak için yazdıkların Google'a gider. Konumun saklanmaz, kimseyle paylaşılmaz.</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>Telefonunda saklananlar</h2>
+      <p>Gidelim'e kaydettiğin her şey yalnızca uygulamanın telefonundaki alanında tutulur:</p>
+      <ul>
+        <li>Listene eklediğin mekanlar. İnternet yokken de görünsünler diye adları, adresleri, puanları, çalışma saatleri ve fotoğraf bağlantıları gibi Google bilgilerinin bir kopyası saklanır.</li>
+        <li>Favorilerin, notların, mühürlerin ve anıların: tarih, puan, not ve anılara eklediğin fotoğrafların kopyaları.</li>
+        <li>Ayarların: seçtiğin baskı, ilk turun bitip bitmediği gibi küçük tercihler.</li>
+      </ul>
+      <p class="ikincil">Bunlar bize gönderilmez. Telefonunda iCloud yedeklemesi ya da bilgisayara yedekleme açıksa Apple'ın yedeklerine dahil olabilir.</p>
+    </section>
+
+    <section>
+      <h2>Konum</h2>
+      <ul>
+        <li>Konum iznini yalnızca uygulamayı kullanırken istiyoruz.</li>
+        <li>Konumun telefonunda kalır. Mekanlara olan mesafeyi göstermek ve yerleri yakınlığa göre sıralamak için kullanılır.</li>
+        <li>Haritada arama yaptığında, sonuçlar baktığın bölgeden gelsin diye haritada görünen alanın orta noktası aramayla birlikte Google'a gönderilir. Bu nokta senin bulunduğun yer olmak zorunda değildir.</li>
+        <li>Konumunu kaydetmiyoruz ve kimseyle paylaşmıyoruz. İzni istediğin zaman <span class="yol">Ayarlar › Gizlilik ve Güvenlik › Konum Servisleri › Gidelim</span> yolundan kapatabilirsin. Uygulama konum izni olmadan da çalışır.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Fotoğraflar</h2>
+      <ul>
+        <li>Anılara fotoğraf eklerken iOS'un fotoğraf seçicisini kullanıyoruz. Uygulama yalnızca seçtiğin fotoğrafları görür; fotoğraf arşivine erişim istemez.</li>
+        <li>Seçtiğin fotoğrafların bir kopyası telefonunda, uygulamanın içinde saklanır. Anıyı ya da mekanı silince bu kopyalar da silinir.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Google</h2>
+      <p>Mekan aramak, mekan bilgilerini, fotoğraflarını ve yorumlarını göstermek için Google Places API'yi kullanıyoruz. Bunun için Google'a şunlar gider:</p>
+      <ul>
+        <li>Arama kutusuna yazdığın metin.</li>
+        <li>Haritada arama yapıyorsan, haritada görünen alanın orta noktası.</li>
+        <li>Bilgisi ya da fotoğrafı istenen mekanın Google kimliği.</li>
+        <li>Her istekte uygulamanın kimliği (<span class="kod">com.tahakarakas.gidelim</span>). Google, isteğin geldiği IP adresini de görür.</li>
+      </ul>
+      <p>Adın, e-postan ya da bir hesap gibi seni tanıtan bilgiler gönderilmez; uygulamada böyle bilgiler zaten yok. Google bu istekleri kendi gizlilik politikasına göre işler: <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></p>
+    </section>
+
+    <section>
+      <h2>Apple ve bağlantılar</h2>
+      <ul>
+        <li>Harita, Apple Haritalar ile çizilir. YOL TARİFİ Apple Haritalar uygulamasını açar. Apple'ın gizlilik politikası: <a href="https://www.apple.com/legal/privacy/" rel="noopener">apple.com/legal/privacy</a></li>
+        <li>Mekan sayfasındaki telefon, web sitesi ve Google Haritalar bağlantıları ilgili uygulamayı ya da sayfayı açar. Oradan sonrası o hizmetlerin kurallarına bağlıdır.</li>
+        <li>Telefonunda "Uygulama Geliştiricileriyle Paylaş" açıksa Apple, kimliğini içermeyen çökme raporlarını bize iletebilir. Bunu <span class="yol">Ayarlar › Gizlilik ve Güvenlik › Analiz ve İyileştirmeler</span> yolundan kapatabilirsin.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Toplamadıklarımız</h2>
+      <ul>
+        <li>Hesap açtırmıyoruz; adını, e-postanı ya da telefon numaranı istemiyoruz.</li>
+        <li>Analitik, reklam ya da takip aracı yok. Uygulamada başka şirketlerin kodu (SDK) bulunmuyor.</li>
+        <li>Uygulamada ne yaptığın kaydedilmez ve bize hiçbir şey gönderilmez.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Verilerini silmek</h2>
+      <ul>
+        <li>Bir mekanı Koleksiyon'da satırı kaydırıp SİL'e dokunarak, bir bölümü Anılar'da satırı kaydırarak silebilirsin.</li>
+        <li>Uygulamayı telefonundan silince bütün Gidelim verileri de silinir.</li>
+        <li>Bizde senin hakkında bir kayıt olmadığı için silmemizi isteyebileceğin bir veri de yok.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Çocuklar</h2>
+      <p>Gidelim 13 yaşından küçük çocuklar için tasarlanmadı ve kimseden bilerek kişisel veri toplamaz.</p>
+    </section>
+
+    <section>
+      <h2>Değişiklikler</h2>
+      <p>Bu politika değişirse bu sayfa güncellenir ve en üstteki tarih değişir.</p>
+    </section>
+
+    <section id="destek">
+      <h2>Destek</h2>
+      <p>Bir soru, öneri ya da sorun için yaz. Bir hata gördüysen telefonunun modelini ve iOS sürümünü de eklersen daha hızlı bakabiliriz.</p>
+      <div class="iletisim">
+        <span class="etiket">E-posta</span>
+        <a class="eposta" href="mailto:tahakarakas6@gmail.com">tahakarakas6@gmail.com</a>
+      </div>
+    </section>
+  </article>
+
+  <div class="ayrac" aria-hidden="true"><span class="elmas"></span></div>
+
+  <!-- ENGLISH -->
+  <article id="en" class="metin" lang="en">
+    <div class="kisaca">
+      <div class="etiket">Privacy Policy · In short</div>
+      <ul>
+        <li>Gidelim has no accounts, ads, analytics or tracking.</li>
+        <li>Everything you save stays on your phone. We have no server and cannot see your data.</li>
+        <li>What you type to search for places is sent to Google. Your location is not stored or shared.</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>Stored on your phone</h2>
+      <p>Everything you save in Gidelim is kept only in the app's storage on your device:</p>
+      <ul>
+        <li>The places on your list, including a copy of their Google details (name, address, rating, opening hours, photo references) so they still show without internet.</li>
+        <li>Your favorites, notes, seals and memories: date, rating, note and copies of the photos you add.</li>
+        <li>Your settings, such as the chosen edition and whether the first-run tour is finished.</li>
+      </ul>
+      <p class="ikincil">None of this is sent to us. If iCloud Backup or computer backups are on, it may be included in your Apple backups.</p>
+    </section>
+
+    <section>
+      <h2>Location</h2>
+      <ul>
+        <li>We ask for location only while you use the app.</li>
+        <li>Your location stays on your phone and is used to show distances to places and sort them by how close they are.</li>
+        <li>When you search on the map, the center of the visible map area is sent to Google with your search so results come from that area. That point is not necessarily where you are.</li>
+        <li>We don't store or share your location. You can turn it off at any time in <span class="yol">Settings › Privacy &amp; Security › Location Services › Gidelim</span>. The app works without it.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Photos</h2>
+      <ul>
+        <li>Photos are added to memories through the iOS photo picker. The app only sees the photos you pick and never asks for access to your library.</li>
+        <li>A copy of each picked photo is stored inside the app on your phone and is deleted when you delete the memory or the place.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Google</h2>
+      <p>We use the Google Places API to search for places and show their details, photos and reviews. To do that, Google receives:</p>
+      <ul>
+        <li>The text you type in the search field.</li>
+        <li>When you search on the map, the center of the visible map area.</li>
+        <li>The Google ID of the place whose details or photos are requested.</li>
+        <li>The app's identifier (<span class="kod">com.tahakarakas.gidelim</span>) with each request. Google also sees the IP address the request comes from.</li>
+      </ul>
+      <p>Nothing that identifies you, such as your name, email or an account, is sent; the app doesn't have that information. Google handles these requests under its own privacy policy: <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></p>
+    </section>
+
+    <section>
+      <h2>Apple and links</h2>
+      <ul>
+        <li>The map is drawn with Apple Maps, and Directions opens the Apple Maps app. Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/" rel="noopener">apple.com/legal/privacy</a></li>
+        <li>Phone, website and Google Maps links on a place's page open the matching app or site, which follows its own rules.</li>
+        <li>If "Share With App Developers" is on, Apple may pass us crash reports that don't identify you. You can turn this off in <span class="yol">Settings › Privacy &amp; Security › Analytics &amp; Improvements</span>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What we don't collect</h2>
+      <ul>
+        <li>No accounts. We never ask for your name, email or phone number.</li>
+        <li>No analytics, advertising or tracking tools, and no third-party SDKs.</li>
+        <li>Nothing you do in the app is logged, and nothing is sent to us.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Deleting your data</h2>
+      <ul>
+        <li>Delete a place by swiping its row in Collection and tapping SİL (Delete); delete a chapter by swiping it in Memories.</li>
+        <li>Deleting the app removes all Gidelim data from your phone.</li>
+        <li>We hold no records about you, so there is nothing on our side to delete.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Children</h2>
+      <p>Gidelim is not designed for children under 13 and does not knowingly collect personal data from anyone.</p>
+    </section>
+
+    <section>
+      <h2>Changes</h2>
+      <p>If this policy changes, this page will be updated along with the date at the top.</p>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>Write to us with questions, suggestions or problems. If you found a bug, including your phone model and iOS version helps us look into it faster.</p>
+      <div class="iletisim">
+        <span class="etiket">Email</span>
+        <a class="eposta" href="mailto:tahakarakas6@gmail.com">tahakarakas6@gmail.com</a>
+      </div>
+    </section>
+  </article>
+
+  <footer>
+    <div class="ayrac etiket" aria-hidden="true">Gidelim · Özel Baskı</div>
+    <div class="no">Nº 001 / 001</div>
+  </footer>
+</main>
+</body>
+</html>
