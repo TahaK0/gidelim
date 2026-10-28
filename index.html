@@ -143,7 +143,7 @@
     <h1>Gidelim</h1>
     <div class="etiket">Gizlilik ve Destek</div>
     <div class="cizgi-kisa" aria-hidden="true"></div>
-    <p class="tarih">Yürürlük tarihi: 19 Ekim 2026</p>
+    <p class="tarih">Yürürlük tarihi: 28 Ekim 2026</p>
     <nav class="dil etiket" aria-label="Dil">
       <a href="#tr">Türkçe</a>
       <a href="#en">English</a>
@@ -157,7 +157,7 @@
       <ul>
         <li>Gidelim'de hesap, reklam, analitik ve takip yok.</li>
         <li>Kaydettiğin her şey yalnızca telefonunda durur. Bizim bir sunucumuz yok; verilerini göremeyiz.</li>
-        <li>Mekan aramak için yazdıkların Google'a gider. Konumun saklanmaz, kimseyle paylaşılmaz.</li>
+        <li>Mekan aramak için yazdıkların, aramanın yapıldığı noktayla (çoğu zaman konumun) birlikte Google'a gider. Konumunu saklamıyoruz.</li>
       </ul>
     </div>
 
@@ -176,9 +176,9 @@
       <h2>Konum</h2>
       <ul>
         <li>Konum iznini yalnızca uygulamayı kullanırken istiyoruz.</li>
-        <li>Konumun telefonunda kalır. Mekanlara olan mesafeyi göstermek ve yerleri yakınlığa göre sıralamak için kullanılır.</li>
-        <li>Haritada arama yaptığında, sonuçlar baktığın bölgeden gelsin diye haritada görünen alanın orta noktası aramayla birlikte Google'a gönderilir. Bu nokta senin bulunduğun yer olmak zorunda değildir.</li>
-        <li>Konumunu kaydetmiyoruz ve kimseyle paylaşmıyoruz. İzni istediğin zaman <span class="yol">Ayarlar › Gizlilik ve Güvenlik › Konum Servisleri › Gidelim</span> yolundan kapatabilirsin. Uygulama konum izni olmadan da çalışır.</li>
+        <li>Konumun mekanlara olan uzaklığı göstermek, yerleri yakınlığa göre sıralamak ve aramada yakınındaki yerleri öne çıkarmak için kullanılır.</li>
+        <li>Arama yaptığında, sonuçlar yakınından gelsin diye bir nokta aramayla birlikte Google'a gönderilir: Koleksiyon'da + ile mekan eklerken konumun, haritadaki aramada haritada görünen alanın orta noktası. Bu nokta yuvarlanmaz, yani kesin konumun olabilir. Arama yapmadığın sürece konumun telefondan çıkmaz.</li>
+        <li>Konumunu kaydetmiyoruz; aramalar dışında kimseyle paylaşmıyoruz. Kesin konumu <span class="yol">Ayarlar › Gizlilik ve Güvenlik › Konum Servisleri › Gidelim › Kesin Konum</span> yolundan kapatabilir, konum iznini aynı yerden tamamen kaldırabilirsin. Uygulama konum izni olmadan da çalışır.</li>
       </ul>
     </section>
 
@@ -187,6 +187,8 @@
       <ul>
         <li>Anılara fotoğraf eklerken iOS'un fotoğraf seçicisini kullanıyoruz. Uygulama yalnızca seçtiğin fotoğrafları görür; fotoğraf arşivine erişim istemez.</li>
         <li>Seçtiğin fotoğrafların bir kopyası telefonunda, uygulamanın içinde saklanır. Anıyı ya da mekanı silince bu kopyalar da silinir.</li>
+        <li>Bir anıyı kartpostal olarak KAYDET'tiğinde kartpostal Fotoğraflar'ına eklenir. Bunun için iOS yalnızca ekleme izni ister; uygulama fotoğraf arşivini göremez. İzni istediğin zaman <span class="yol">Ayarlar › Gizlilik ve Güvenlik › Fotoğraflar › Gidelim</span> yolundan kapatabilirsin.</li>
+        <li>PAYLAŞ'a dokunursan kartpostal, iOS paylaşım menüsünde seçtiğin uygulamaya gider; oradan sonrası o uygulamanın kurallarına bağlıdır. Kartpostala Google fotoğrafı konmaz.</li>
       </ul>
     </section>
 
@@ -195,7 +197,7 @@
       <p>Mekan aramak, mekan bilgilerini, fotoğraflarını ve yorumlarını göstermek için Google Places API'yi kullanıyoruz. Bunun için Google'a şunlar gider:</p>
       <ul>
         <li>Arama kutusuna yazdığın metin.</li>
-        <li>Haritada arama yapıyorsan, haritada görünen alanın orta noktası.</li>
+        <li>Arama yaparken bir nokta: Koleksiyon'daki aramada konumun, haritadaki aramada haritada görünen alanın orta noktası. Bu nokta yuvarlanmaz.</li>
         <li>Bilgisi ya da fotoğrafı istenen mekanın Google kimliği.</li>
         <li>Her istekte uygulamanın kimliği (<span class="kod">com.tahakarakas.gidelim</span>). Google, isteğin geldiği IP adresini de görür.</li>
       </ul>
@@ -217,6 +219,7 @@
         <li>Hesap açtırmıyoruz; adını, e-postanı ya da telefon numaranı istemiyoruz.</li>
         <li>Analitik, reklam ya da takip aracı yok. Uygulamada başka şirketlerin kodu (SDK) bulunmuyor.</li>
         <li>Uygulamada ne yaptığın kaydedilmez ve bize hiçbir şey gönderilmez.</li>
+        <li>Ekran görüntüsü aldığında iOS bunu uygulamaya bildirir ve uygulama bir kez kısa bir cümle gösterir. Uygulama görüntüye erişmez, bunu kaydetmez ve hiçbir yere göndermez.</li>
       </ul>
     </section>
 
@@ -258,7 +261,7 @@
       <ul>
         <li>Gidelim has no accounts, ads, analytics or tracking.</li>
         <li>Everything you save stays on your phone. We have no server and cannot see your data.</li>
-        <li>What you type to search for places is sent to Google. Your location is not stored or shared.</li>
+        <li>What you type to search for places is sent to Google together with the point the search is made around (often your location). We don't store your location.</li>
       </ul>
     </div>
 
@@ -277,9 +280,9 @@
       <h2>Location</h2>
       <ul>
         <li>We ask for location only while you use the app.</li>
-        <li>Your location stays on your phone and is used to show distances to places and sort them by how close they are.</li>
-        <li>When you search on the map, the center of the visible map area is sent to Google with your search so results come from that area. That point is not necessarily where you are.</li>
-        <li>We don't store or share your location. You can turn it off at any time in <span class="yol">Settings › Privacy &amp; Security › Location Services › Gidelim</span>. The app works without it.</li>
+        <li>Your location is used to show distances to places, sort them by how close they are and favor nearby places in searches.</li>
+        <li>When you search, a point is sent to Google with your search so results come from nearby: when adding a place with + in Collection, your location; on the map, the center of the visible map area. This point is not rounded, so it can be your precise location. Your location doesn't leave your phone unless you search.</li>
+        <li>We don't store your location or share it with anyone other than Google during searches. You can turn off Precise Location in <span class="yol">Settings › Privacy &amp; Security › Location Services › Gidelim › Precise Location</span>, or turn off location access there entirely. The app works without it.</li>
       </ul>
     </section>
 
@@ -288,6 +291,8 @@
       <ul>
         <li>Photos are added to memories through the iOS photo picker. The app only sees the photos you pick and never asks for access to your library.</li>
         <li>A copy of each picked photo is stored inside the app on your phone and is deleted when you delete the memory or the place.</li>
+        <li>When you save a memory as a postcard (KAYDET), the postcard is added to your Photos. iOS asks only for permission to add photos; the app cannot see your library. You can turn this off at any time in <span class="yol">Settings › Privacy &amp; Security › Photos › Gidelim</span>.</li>
+        <li>If you tap PAYLAŞ (Share), the postcard goes to the app you pick in the iOS share sheet, which follows its own rules. Google photos are never used on postcards.</li>
       </ul>
     </section>
 
@@ -296,7 +301,7 @@
       <p>We use the Google Places API to search for places and show their details, photos and reviews. To do that, Google receives:</p>
       <ul>
         <li>The text you type in the search field.</li>
-        <li>When you search on the map, the center of the visible map area.</li>
+        <li>When you search, a point: your location for searches in Collection, or the center of the visible map area for searches on the map. This point is not rounded.</li>
         <li>The Google ID of the place whose details or photos are requested.</li>
         <li>The app's identifier (<span class="kod">com.tahakarakas.gidelim</span>) with each request. Google also sees the IP address the request comes from.</li>
       </ul>
@@ -318,6 +323,7 @@
         <li>No accounts. We never ask for your name, email or phone number.</li>
         <li>No analytics, advertising or tracking tools, and no third-party SDKs.</li>
         <li>Nothing you do in the app is logged, and nothing is sent to us.</li>
+        <li>When you take a screenshot, iOS tells the app and the app shows a short line once. The app does not access the screenshot, record it or send it anywhere.</li>
       </ul>
     </section>
 
